@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CABN - Quizzos</title>
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/modern-normalize.css">
+	</head>
+	<body>
+		<aside id="sidebar">
+			<h2 id="side_title">Quick Access</h2>
+			<a href="home.html">Home</a>
+			<a href="ask_question.html">Ask</a>
+		</aside>
+		<div class="q_container">
+			<div id="q_focus" class="question">
+				<h1 class="q_title">Call to method Myclass.class.getProtectionDomain().getCodeSource() returns empty path?</h1>
+				<p class="q_body">I know I'm doing something wrong trying to get the correct path since the method keeps returning empty. Here's the method I'm using:</p>
+				<p class="code">File jarFile = new File(JarPath.class.getProtectionDomain().getCodeSource().getLocation().toURI());</p>
+				<p class="q_body">when i run it on the IDE (eclipse) it returns the correct path. but when i run the jar as an executable the code source returned is</p>
+				<p class="code">rsrc:./</p>
+				<p class="q_body">Any idea what I'm doing wrong?</p>
+				<a class="code_link" href=""></a>
+			</div>
+			<div id="answers">
+				<div class="answer">
+					<p class="a_body">Try a different approach to get the location.</p>
+					<p class="code">String jarFilePath = ClassLoader.getSystemClassLoader().getResource(".").toURI().getPath().replaceFirst("/", "");</p>
+					<p class="a_body">This gives you up to the parent location of the jar file.</p>
+					<p class="code">C:/Users/Roshana Pitigala/Desktop/</p>
+				</div>
+			</div>
+		</div>
+		<div id="submit-answer_container">
+			<form>
+				<input type="text" placeholder="Have an answer? Type it here!">
+				<input type="submit" value="Submit Answer">
+			</form>
+		</div>
+	</body>
+</html>
