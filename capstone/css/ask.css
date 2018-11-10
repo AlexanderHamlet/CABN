@@ -7,16 +7,13 @@ body {
 	/*background: rgb(102, 204, 255);*/
 	background: rgb(55, 130, 173);
 	display: grid;
-	grid-template-columns: 1fr 2fr 2fr;
-	grid-template-rows: 1fr 4fr 4fr 4fr 4fr 4fr;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 1fr 4fr 4fr;
     /*grid-auto-rows: minmax(100px, auto);*/
 	grid-template-areas:
-	"title title title"
-	"sidebar unans-q unans-q"
-	"sidebar unans-q unans-q"
-	"sidebar ans-q ans-q"
-	"sidebar ans-q ans-q"
-	"sidebar submit submit";
+	"title title title title title"
+	"sidebar unans-q unans-q unans-q unans-q"
+	"sidebar unans-q unans-q unans-q unans-q";
 }
 
 a {
@@ -24,7 +21,29 @@ a {
 	text-decoration: none;
 }
 
-h1#title {
+#ask-question_container {
+	grid-area: unans-q;
+	margin: 0 5% 0 5%;
+}
+
+textarea {
+	width: 50%;
+	height: 70px;
+	padding-top: 10px;
+	border-radius: 3px;
+	margin-bottom: 20px !important;
+}
+input[type=submit] {
+	/*width: 100px;*/
+	height: 35px;
+    border-radius: 3px;
+    background-color: rgb(21, 49, 66);
+    color: white;
+    border: none;
+    display: block;
+}
+
+h1#title{
 	grid-area: title;
 	text-align: center;
 	font-size: 48px;
@@ -55,14 +74,11 @@ h1#title {
 	background: none;
 }
 
+
 #q_focus {
-	
 	overflow-wrap: break-word;
 }
-
-
 .question {
-	grid-area: ans-q / span 2;
 	overflow-wrap: break-word;
 	display: block;
 	/*border: solid black;*/
@@ -74,12 +90,8 @@ h1#title {
 
 #answers {
 	width: 100%;
-	/*grid-area: ans-q / span 4;*/
-	margin-bottom: 100px;
 }
-
 .answer{
-	grid-area: ans-q / span 2;
 	background-color: #efebd7;
     color: black;
     padding: 10px;
@@ -102,7 +114,7 @@ h1#title {
 #side_title {
 	font-size: 1.5em;
 	text-align: center;
-	width: 257px;
+	min-width: 257px;
 }
 
 #sidebar a {
@@ -115,13 +127,6 @@ h1#title {
 	text-align: center;
 }
 
-#submit-answer_container {
-	grid-area: submit;
-	/*margin-top: 100px;*/
-	margin-left: 60px;
-	/*width: 100%;*/
-	margin-bottom: 100px;
-}
 
 #submit-answer_container input[type=text] {
 	width: 250px;
