@@ -6,12 +6,14 @@ body {
 	/*background: rgb(102, 204, 255);*/
 	background: rgb(55, 130, 173);
 	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+    /*grid-auto-rows: minmax(100px, auto);*/
 	grid-template-areas:
-	"sidebar title title"
-	"sidebar unans-q unans-q"
-	"sidebar unans-q unans-q"
-	"sidebar ans-q ans-q"
-	"sidebar ans-q ans-q";
+	"title title title title title"
+	"sidebar unans-q unans-q unans-q unans-q"
+	"sidebar unans-q unans-q unans-q unans-q"
+	"sidebar ans-q ans-q ans-q ans-q"
+	"sidebar ans-q ans-q ans-q ans-q";
 }
 
 a {
